@@ -67,6 +67,39 @@ body > main > .amount {
 		white-space: nowrap;
 		margin-top: 20px;
 	}
+	
+body > main > footer {
+	top: 620px;
+	bottom: 40px;
+	left: 0px;
+	right: 0px;
+	background-color: rgba(0, 0, 0, 0.1);
+}	
+	
+	body > main > footer > table {
+		table-layout: fixed;
+		position: absolute;
+		border-collapse: separate;
+		border-spacing: 3px;
+		top: 0px;
+		height: 100%;
+		width: auto;
+		transition: left 0.2s, right 0.2s;
+	}
+		
+		body > main > footer > table > tbody > tr > td {
+			vertical-align: bottom;
+			width: 10px;
+			min-width: 10px;
+			max-width: 10px;
+		}	
+			
+			body > main > footer > table > tbody > tr > td > div {
+				vertical-align: bottom;
+				width: 100%;
+				height: 0px;
+				transition: height 2s;
+			}	
 
 #spark {
 	left: 0px;
@@ -94,6 +127,14 @@ body > main > .amount {
 	#spark > .amount:after {
 		right: 0px;
 	}
+	
+	#spark > footer > table {
+		right: 0px;
+	}
+	
+	#spark > footer > table > tbody > tr > td > div {
+		background-color: #36C;
+	}
 
 #normal {
 	left: 50%;
@@ -102,6 +143,7 @@ body > main > .amount {
 }
 
 #normal > header {
+	text-align: left;
 }
 
 #normal > canvas {
@@ -118,6 +160,14 @@ body > main > .amount {
 
 	#normal > .amount:after {
 		left: 0px;
+	}
+	
+	#normal > footer > table {
+		left: 0px;
+	}
+	
+	#normal > footer > table > tbody > tr > td > div {
+		background-color: #222;
 	}
 
 body > footer {

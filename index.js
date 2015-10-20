@@ -4,6 +4,11 @@ var Globe_Normal;
 var Amount_Spark = 0;
 var Amount_Normal = 1;
 
+var Stack_Spark = 0;
+var Stack_Normal = 0;
+var Stack_Max = 100;
+var Stack_Height = document.querySelector("#spark > footer").offsetHeight;
+
 function Init_Globe_Spark() {
 
     var planetaryjs = window.planetaryjs;
@@ -20,7 +25,7 @@ function Init_Globe_Spark() {
         borders: { stroke: '#36F' }
     }));
 
-    Globe_Spark.loadPlugin(Middleware_Autorotate(60));
+    Globe_Spark.loadPlugin(Middleware_Autorotate(30));
     Globe_Spark.loadPlugin(planetaryjs.plugins.pings());
     Globe_Spark.loadPlugin(planetaryjs.plugins.drag({
         onDragStart: function () {
@@ -96,10 +101,10 @@ function Middleware_Autorotate(degPerSec) {
 
 function Dummy_Data_Pump() {
 
-    // Spark
+    // Pump Spark data
     setInterval(function () {
-
-        for (var i = 0; i < 10; i++) {
+        var range = Math.random() * 10 + 5;
+        for (var i = 0; i < range; i++) {
             var data = {
                 longitute: Math.random() * 170 - 85,
                 latitude: Math.random() * 360 - 180
@@ -107,17 +112,11 @@ function Dummy_Data_Pump() {
             var color = 'red';
             Globe_Spark.plugins.pings.add(data.longitute, data.latitude, { color: color, ttl: 500, angle: 10 });
             Amount_Spark++;
+            Stack_Spark++;
         }
-
     }, 100);
 
-    setInterval(function () {
-        document.querySelector("#spark > .amount").innerHTML = Amount_Spark;
-        document.querySelector("#normal > .amount").innerHTML = Amount_Normal;
-        document.querySelector("body > footer > div").innerHTML = (Amount_Spark / Amount_Normal).toFixed(0);
-    }, 10);
-
-    // Normal
+    // Pump Normal data
     setInterval(function () {
         var data = {
             longitute: Math.random() * 170 - 85,
@@ -126,7 +125,34 @@ function Dummy_Data_Pump() {
         var color = 'red';
         Globe_Normal.plugins.pings.add(data.longitute, data.latitude, { color: color, ttl: 5000, angle: 10 });
         Amount_Normal++;
+        Stack_Normal++;
     }, 200);
+    
+    // Render Amount
+    setInterval(function () {
+        document.querySelector("#spark > .amount").innerHTML = Amount_Spark;
+        document.querySelector("#normal > .amount").innerHTML = Amount_Normal;
+        document.querySelector("body > footer > div").innerHTML = (Amount_Spark / Amount_Normal).toFixed(0);
+    }, 10);
+    
+    // Render Stack
+    setInterval(function () {
+        var TD_Spark = document.createElement("td");
+        var DIV_Spark = document.createElement("div");
+        TD_Spark.appendChild(DIV_Spark);
+        document.querySelector("#spark > footer > table > tbody > tr").appendChild(TD_Spark);
+        DIV_Spark.offsetWidth = DIV_Spark.offsetWidth;
+        DIV_Spark.style.height = Stack_Spark / Stack_Max * Stack_Height + "px";
+        Stack_Spark = 0;
+
+        var TD_Normal = document.createElement("td");
+        var DIV_Normal = document.createElement("div");
+        TD_Normal.appendChild(DIV_Normal);
+        document.querySelector("#normal > footer > table > tbody > tr").insertBefore(TD_Normal, document.querySelector("#normal > footer > table > tbody > tr").firstChild);
+        DIV_Normal.offsetWidth = DIV_Normal.offsetWidth;
+        DIV_Normal.style.height = Stack_Normal / Stack_Max * Stack_Height + "px";
+        Stack_Normal = 0;
+    }, 500);
 
 }
 
