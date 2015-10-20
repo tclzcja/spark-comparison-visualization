@@ -80,7 +80,7 @@ body > main > footer {
 		table-layout: fixed;
 		position: absolute;
 		border-collapse: separate;
-		border-spacing: 3px;
+		border-spacing: 2px;
 		top: 0px;
 		height: 100%;
 		width: auto;
