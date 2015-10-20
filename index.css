@@ -13,11 +13,40 @@ html, body {
 	bottom: 0px;
 }
 
-body {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	background-repeat: no-repeat;
-	background-position: center center;
-	background-size: cover;
+body > main {
+	position: absolute;
+}
+
+body > main > canvas {
+	position: absolute;
+	height: 500px;
+	width: 500px;
+}
+
+#spark {
+	top: 0px;
+	left: 0px;
+	bottom: 0px;
+	right: 50%;
+	background-color: #69F;
+}
+
+#spark > canvas {
+	top: 50%;
+	margin-top: -250px;
+	right: 0px;
+}
+
+#normal {
+	top: 0px;
+	left: 50%;
+	right: 0px;
+	bottom: 0px;
+	background-color: #333;
+}
+
+#normal > canvas {
+	top: 50%;
+	margin-top: -250px;
+	left: 0px;
 }

@@ -2,16 +2,19 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-    <script type='text/javascript' src='http://d3js.org/d3.v3.min.js'></script>
-    <script type='text/javascript' src='http://d3js.org/topojson.v1.min.js'></script>
-    <script type='text/javascript' src='lib/planetaryjs.min.js'></script>
+    <script type='text/javascript' src='bower_components/d3/d3.min.js'></script>
+    <script type='text/javascript' src='bower_components/topojson/topojson.js'></script>
+    <script type='text/javascript' src='bower_components/planetary.js/dist/planetaryjs.min.js'></script>
     <link rel="stylesheet" type="text/css" href="index.css" />
-
 </head>
 
 <body>
-    <canvas id='globe_quick' width='400' height='400' style='width: 400px; height: 400px; cursor: move;'></canvas>
-    <canvas id='globe_slow' width='400' height='400' style='width: 400px; height: 400px; cursor: move;'></canvas>
+    <main id="normal">
+        <canvas id='globe_normal' height="500" width="500"></canvas>
+    </main>
+    <main id="spark">
+        <canvas id='globe_spark' height="500" width="500"></canvas>
+    </main>
     <script type='text/javascript' src='index.js'></script>
 </body>
 
