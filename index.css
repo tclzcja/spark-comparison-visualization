@@ -17,10 +17,20 @@ body > main {
 	position: absolute;
 }
 
-body > main > canvas {
+body > main > * {
 	position: absolute;
+}
+
+body > main > canvas {
 	height: 500px;
 	width: 500px;
+}
+
+body > main > .halo {
+	height: 500px;
+	width: 500px;
+	border-radius: 250px;
+	box-shadow: 0 0 20px black;	
 }
 
 #spark {
@@ -31,7 +41,7 @@ body > main > canvas {
 	background-color: #69F;
 }
 
-#spark > canvas {
+#spark > canvas, #spark > .halo {
 	top: 50%;
 	margin-top: -250px;
 	right: 0px;
@@ -45,7 +55,7 @@ body > main > canvas {
 	background-color: #333;
 }
 
-#normal > canvas {
+#normal > canvas, #normal > .halo {
 	top: 50%;
 	margin-top: -250px;
 	left: 0px;
