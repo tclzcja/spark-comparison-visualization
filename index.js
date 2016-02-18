@@ -1,3 +1,5 @@
+/* jshint browser: true, esnext: true, devel: true */
+
 var Globe_Spark;
 var Globe_Normal;
 
@@ -19,10 +21,18 @@ function Init_Globe_Spark() {
     Globe_Spark = planetaryjs.planet();
 
     Globe_Spark.loadPlugin(planetaryjs.plugins.earth({
-        topojson: { file: 'bower_components/planetary.js/dist/world-110m.json' },
-        oceans: { fill: '#36F' },
-        land: { fill: '#FFF' },
-        borders: { stroke: '#36F' }
+        topojson: {
+            file: 'bower_components/planetary.js/dist/world-110m.json'
+        },
+        oceans: {
+            fill: '#36F'
+        },
+        land: {
+            fill: '#FFF'
+        },
+        borders: {
+            stroke: '#36F'
+        }
     }));
 
     Globe_Spark.loadPlugin(Middleware_Autorotate(30));
@@ -52,10 +62,18 @@ function Init_Globe_Normal() {
     Globe_Normal = planetaryjs.planet();
 
     Globe_Normal.loadPlugin(planetaryjs.plugins.earth({
-        topojson: { file: 'bower_components/planetary.js/dist/world-110m.json' },
-        oceans: { fill: '#222' },
-        land: { fill: '#666' },
-        borders: { stroke: '#222' }
+        topojson: {
+            file: 'bower_components/planetary.js/dist/world-110m.json'
+        },
+        oceans: {
+            fill: '#222'
+        },
+        land: {
+            fill: '#666'
+        },
+        borders: {
+            stroke: '#222'
+        }
     }));
 
     Globe_Normal.loadPlugin(Middleware_Autorotate(10));
@@ -80,8 +98,12 @@ function Middleware_Autorotate(degPerSec) {
         var lastTick = null;
         var paused = false;
         planet.plugins.autorotate = {
-            pause: function () { paused = true; },
-            resume: function () { paused = false; }
+            pause: function () {
+                paused = true;
+            },
+            resume: function () {
+                paused = false;
+            }
         };
         planet.onDraw(function () {
             if (paused || !lastTick) {
@@ -110,7 +132,11 @@ function Dummy_Data_Pump() {
                 latitude: Math.random() * 360 - 180
             };
             var color = 'red';
-            Globe_Spark.plugins.pings.add(data.longitute, data.latitude, { color: color, ttl: 500, angle: 10 });
+            Globe_Spark.plugins.pings.add(data.longitute, data.latitude, {
+                color: color,
+                ttl: 500,
+                angle: 10
+            });
             Amount_Spark++;
             Stack_Spark++;
         }
@@ -123,18 +149,22 @@ function Dummy_Data_Pump() {
             latitude: Math.random() * 360 - 180
         };
         var color = 'red';
-        Globe_Normal.plugins.pings.add(data.longitute, data.latitude, { color: color, ttl: 5000, angle: 10 });
+        Globe_Normal.plugins.pings.add(data.longitute, data.latitude, {
+            color: color,
+            ttl: 5000,
+            angle: 10
+        });
         Amount_Normal++;
         Stack_Normal++;
     }, 200);
-    
+
     // Render Amount
     setInterval(function () {
         document.querySelector("#spark > .amount").innerHTML = Amount_Spark;
         document.querySelector("#normal > .amount").innerHTML = Amount_Normal;
         document.querySelector("body > footer > div").innerHTML = (Amount_Spark / Amount_Normal).toFixed(0);
     }, 10);
-    
+
     // Render Stack
     setInterval(function () {
         var TD_Spark = document.createElement("td");
