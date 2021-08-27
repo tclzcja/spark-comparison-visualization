@@ -20,7 +20,7 @@ function Init_Globe_Spark() {
 	Globe_Spark.loadPlugin(
 		planetaryjs.plugins.earth({
 			topojson: {
-				file: "bower_components/planetary.js/dist/world-110m.json",
+				file: "lib/planetary.js/dist/world-110m.json",
 			},
 			oceans: {
 				fill: "#36F",
@@ -63,7 +63,7 @@ function Init_Globe_Normal() {
 	Globe_Normal.loadPlugin(
 		planetaryjs.plugins.earth({
 			topojson: {
-				file: "bower_components/planetary.js/dist/world-110m.json",
+				file: "lib/planetary.js/dist/world-110m.json",
 			},
 			oceans: {
 				fill: "#222",
