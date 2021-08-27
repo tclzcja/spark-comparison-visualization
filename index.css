@@ -1,215 +1,215 @@
 * {
-    padding: 0px;
-    margin: 0px;
+	padding: 0px;
+	margin: 0px;
 }
 
 html,
 body {
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-    font-family: "Segoe UI Light";
-    transform: translateZ(0px);
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	font-family: system-ui, sans-serif;
+	transform: translateZ(0px);
 }
 
 body > main {
-    position: absolute;
-    top: 0px;
-    bottom: 0px;
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
 }
 
 body > main > * {
-    position: absolute;
+	position: absolute;
 }
 
 body > main > header {
-    top: 100px;
-    left: 0px;
-    right: 0px;
-    font-size: 80px;
-    height: 120px;
-    padding-right: 40px;
-    padding-left: 40px;
-    line-height: 120px;
-    background-color: rgba(0, 0, 0, 0.1);
-    color: white;
+	top: 100px;
+	left: 0px;
+	right: 0px;
+	font-size: 80px;
+	height: 120px;
+	padding-right: 40px;
+	padding-left: 40px;
+	line-height: 120px;
+	background-color: rgba(0, 0, 0, 0.1);
+	color: white;
 }
 
 body > main > canvas {
-    top: 60px;
-    height: 500px;
-    width: 500px;
+	top: 60px;
+	height: 500px;
+	width: 500px;
 }
 
 body > main > .halo {
-    top: 40px;
-    height: 500px;
-    width: 500px;
-    border-radius: 270px;
-    border: solid 20px rgba(0, 0, 0, 0.1);
+	top: 40px;
+	height: 500px;
+	width: 500px;
+	border-radius: 270px;
+	border: solid 20px rgba(0, 0, 0, 0.1);
 }
 
 body > main > .amount {
-    top: 240px;
-    font-size: 120px;
-    line-height: 100%;
+	top: 240px;
+	font-size: 120px;
+	line-height: 100%;
 }
 
 body > main > .amount:after {
-    content: "Requests processed";
-    position: absolute;
-    top: 100%;
-    font-size: 24px;
-    line-height: 100%;
-    overflow: visible;
-    white-space: nowrap;
-    margin-top: 20px;
+	content: "Requests processed";
+	position: absolute;
+	top: 100%;
+	font-size: 24px;
+	line-height: 100%;
+	overflow: visible;
+	white-space: nowrap;
+	margin-top: 20px;
 }
 
 body > main > footer {
-    top: 620px;
-    bottom: 40px;
-    left: 0px;
-    right: 0px;
-    background-color: rgba(0, 0, 0, 0.1);
-    overflow: hidden;
+	top: 620px;
+	bottom: 40px;
+	left: 0px;
+	right: 0px;
+	background-color: rgba(0, 0, 0, 0.1);
+	overflow: hidden;
 }
 
 body > main > footer > table {
-    table-layout: fixed;
-    position: absolute;
-    border-collapse: separate;
-    border-spacing: 2px;
-    top: 0px;
-    height: 100%;
-    width: auto;
-    transition: left 0.2s, right 0.2s;
+	table-layout: fixed;
+	position: absolute;
+	border-collapse: separate;
+	border-spacing: 2px;
+	top: 0px;
+	height: 100%;
+	width: auto;
+	transition: left 0.2s, right 0.2s;
 }
 
 body > main > footer > table > tbody > tr > td {
-    vertical-align: bottom;
-    width: 10px;
-    min-width: 10px;
-    max-width: 10px;
+	vertical-align: bottom;
+	width: 10px;
+	min-width: 10px;
+	max-width: 10px;
 }
 
 body > main > footer > table > tbody > tr > td > div {
-    vertical-align: bottom;
-    width: 100%;
-    height: 0px;
-    transition: height 2s;
+	vertical-align: bottom;
+	width: 100%;
+	height: 0px;
+	transition: height 2s;
 }
 
 #spark {
-    left: 0px;
-    right: 50%;
-    background-color: #69F;
+	left: 0px;
+	right: 50%;
+	background-color: #69f;
 }
 
 #spark > header {
-    text-align: right;
+	text-align: right;
 }
 
 #spark > canvas {
-    left: 60px;
+	left: 60px;
 }
 
 #spark > .halo {
-    left: 40px;
+	left: 40px;
 }
 
 #spark > .amount {
-    right: 40px;
-    color: #009;
+	right: 40px;
+	color: #009;
 }
 
 #spark > .amount:after {
-    right: 0px;
+	right: 0px;
 }
 
 #spark > footer > table {
-    right: 0px;
+	right: 0px;
 }
 
 #spark > footer > table > tbody > tr > td > div {
-    background-color: #36C;
+	background-color: #36c;
 }
 
 #normal {
-    left: 50%;
-    right: 0px;
-    background-color: #333;
+	left: 50%;
+	right: 0px;
+	background-color: #333;
 }
 
 #normal > header {
-    text-align: left;
+	text-align: left;
 }
 
 #normal > canvas {
-    right: 60px;
+	right: 60px;
 }
 
 #normal > .halo {
-    right: 40px;
+	right: 40px;
 }
 
 #normal > .amount {
-    left: 40px;
+	left: 40px;
 }
 
 #normal > .amount:after {
-    left: 0px;
+	left: 0px;
 }
 
 #normal > footer > table {
-    left: 0px;
+	left: 0px;
 }
 
 #normal > footer > table > tbody > tr > td > div {
-    background-color: #222;
+	background-color: #222;
 }
 
 body > footer {
-    position: fixed;
-    height: 120px;
-    top: 460px;
-    background-color: #69F;
-    left: 45%;
-    right: 45%;
+	position: fixed;
+	height: 120px;
+	top: 460px;
+	background-color: #69f;
+	left: 45%;
+	right: 45%;
 }
 
 body > footer:after {
-    content: "";
-    position: absolute;
-    top: 0px;
-    left: 100%;
-    height: 0px;
-    border-left: solid 60px #69F;
-    border-top: solid 60px transparent;
-    border-bottom: solid 60px transparent;
+	content: "";
+	position: absolute;
+	top: 0px;
+	left: 100%;
+	height: 0px;
+	border-left: solid 60px #69f;
+	border-top: solid 60px transparent;
+	border-bottom: solid 60px transparent;
 }
 
 body > footer > div {
-    position: absolute;
-    text-align: center;
-    font-size: 60px;
-    top: 15px;
-    left: 0px;
-    right: 0px;
-    height: 80px;
-    line-height: 60px;
-    color: white;
+	position: absolute;
+	text-align: center;
+	font-size: 60px;
+	top: 15px;
+	left: 0px;
+	right: 0px;
+	height: 80px;
+	line-height: 60px;
+	color: white;
 }
 
 body > footer > span {
-    position: absolute;
-    left: 0px;
-    right: 0px;
-    bottom: 15px;
-    line-height: 20px;
-    font-size: 20px;
-    text-align: center;
-    color: #CCC;
+	position: absolute;
+	left: 0px;
+	right: 0px;
+	bottom: 15px;
+	line-height: 20px;
+	font-size: 20px;
+	text-align: center;
+	color: #ccc;
 }

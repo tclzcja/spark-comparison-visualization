@@ -1,45 +1,52 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<script
+			type="text/javascript"
+			src="bower_components/d3/d3.min.js"
+		></script>
+		<script
+			type="text/javascript"
+			src="bower_components/topojson/topojson.js"
+		></script>
+		<script
+			type="text/javascript"
+			src="bower_components/planetary.js/dist/planetaryjs.min.js"
+		></script>
+		<link rel="stylesheet" type="text/css" href="index.css" />
+	</head>
 
-<head>
-    <script type='text/javascript' src='bower_components/d3/d3.min.js'></script>
-    <script type='text/javascript' src='bower_components/topojson/topojson.js'></script>
-    <script type='text/javascript' src='bower_components/planetary.js/dist/planetaryjs.min.js'></script>
-    <link rel="stylesheet" type="text/css" href="index.css" />
-</head>
-
-<body>
-    <main id="spark">
-        <header>Spark</header>
-        <div class="halo"></div>
-        <canvas id='globe_spark' height="500" width="500"></canvas>
-        <div class="amount"></div>
-        <footer>
-            <table>
-                <tbody>
-                    <tr></tr>
-                </tbody>
-            </table>
-        </footer>
-    </main>
-    <main id="normal">
-        <header>Normal</header>
-        <div class="halo"></div>
-        <canvas id='globe_normal' height="500" width="500"></canvas>
-        <div class="amount"></div>
-        <footer>
-            <table>
-                <tbody>
-                    <tr></tr>
-                </tbody>
-            </table>
-        </footer>
-    </main>
-    <footer>
-        <div></div>
-        <span>Times faster</span>
-    </footer>
-    <script type='text/javascript' src='index.js'></script>
-</body>
-
+	<body>
+		<main id="spark">
+			<header>Spark</header>
+			<div class="halo"></div>
+			<canvas id="globe_spark" height="500" width="500"></canvas>
+			<div class="amount"></div>
+			<footer>
+				<table>
+					<tbody>
+						<tr></tr>
+					</tbody>
+				</table>
+			</footer>
+		</main>
+		<main id="normal">
+			<header>Normal</header>
+			<div class="halo"></div>
+			<canvas id="globe_normal" height="500" width="500"></canvas>
+			<div class="amount"></div>
+			<footer>
+				<table>
+					<tbody>
+						<tr></tr>
+					</tbody>
+				</table>
+			</footer>
+		</main>
+		<footer>
+			<div></div>
+			<span>Times faster</span>
+		</footer>
+		<script type="text/javascript" src="index.js"></script>
+	</body>
 </html>
